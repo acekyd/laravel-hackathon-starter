@@ -18,8 +18,8 @@
 
             @if (Auth::guest())
             <ul class="nav navbar-nav navbar-right">
-                <li class="{{ request()->path() == "login" ? 'active' : 'n' }}"><a href="{{ route('auth.login') }}">Login</a></li>
-                <li class="{{ request()->path() == "signup" ? 'active' : 'n' }}"><a href="{{ route('auth.register') }}">Create Account</a></li>
+                <li class="{{ request()->path() == "login" ? 'active' : 'n' }}"><a href="{{ route('login') }}">Login</a></li>
+                <li class="{{ request()->path() == "signup" ? 'active' : 'n' }}"><a href="{{ route('register') }}">Create Account</a></li>
             </ul>
             @else
             <ul class="nav navbar-nav navbar-right">

@@ -9,7 +9,7 @@
             <h3>Sign In</h3>
         </div>
 
-         <form role="form" method="POST" action="{{ route('auth.login') }}" class="form-horizontal" _lpchecked="1">
+         <form role="form" method="POST" action="{{ route('login') }}" class="form-horizontal" _lpchecked="1">
             {!! csrf_field() !!}
             <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                 <label for="email" class="col-sm-2 control-label">Email</label>

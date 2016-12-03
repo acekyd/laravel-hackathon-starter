@@ -25,6 +25,8 @@
 
 Route::group(['middleware' => ['web']], function () {
 
+    Auth::routes();
+
     Route::get('/', [
     'as' => 'home', 'uses' => 'PageController@home'
         ]);
@@ -154,17 +156,6 @@ Route::group(['middleware' => ['web']], function () {
         'middleware' => ['auth']
     ]);
 
-    Route::get('/login', [
-        'uses' => 'Auth\AuthController@getLogin',
-        'as'   => 'auth.login',
-        'middleware' => ['guest']
-    ]);
-
-    Route::post('/login', [
-        'uses' => 'Auth\AuthController@postLogin',
-        'middleware' => ['guest']
-    ]);
-
     // Password Reset Routes...
     Route::get('password/reset/{token?}', 'Auth\PasswordController@showResetForm');
     Route::post('password/email', 'Auth\PasswordController@sendResetLinkEmail');
@@ -215,7 +206,7 @@ Route::group(['middleware' => ['web']], function () {
         'as'   => 'account.dont.delete',
         'middleware' => ['auth']
     ]);
-
+/*
     Route::get('/signup', [
         'uses' => 'Auth\AuthController@getRegister',
         'as'   => 'auth.register',
@@ -230,7 +221,7 @@ Route::group(['middleware' => ['web']], function () {
     Route::post('/signup', [
         'uses' => 'Auth\AuthController@postRegister',
         'middleware' => ['guest']
-    ]);
+    ]);*/
 
     Route::get('/contact', function () {
         return view('contact');
